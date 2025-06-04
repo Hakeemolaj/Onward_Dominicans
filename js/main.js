@@ -1,6 +1,6 @@
 (function ($) {
     "use strict";
-    
+
     // Dropdown on mouse hover
     $(document).ready(function () {
         function toggleNavbarMethod() {
@@ -17,8 +17,8 @@
         toggleNavbarMethod();
         $(window).resize(toggleNavbarMethod);
     });
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
@@ -126,7 +126,7 @@
             }
         }
     });
-    
+
 
     // Carousel item 4
     $(".carousel-item-4").owlCarousel({
@@ -158,7 +158,7 @@
             }
         }
     });
-    
+
 })(jQuery);
 
 document.querySelector('.input-group').addEventListener('submit', function(event) {
@@ -176,8 +176,8 @@ document.querySelector('.input-group').addEventListener('submit', function(event
         { id: 6, title: "Rev. Fr. Buluran reminds every Dominican...", content: 'The latest smartphone model features...', url: 'frbuluran.html' },
     ];
 
-    const results = articles.filter(article => 
-        article.title.toLowerCase().includes(query) || 
+    const results = articles.filter(article =>
+        article.title.toLowerCase().includes(query) ||
         article.content.toLowerCase().includes(query)
     );
 
@@ -190,5 +190,13 @@ document.querySelector('.input-group').addEventListener('submit', function(event
         });
     } else {
         resultsContainer.innerHTML = '<p>No results found</p>';
+    }
+});
+
+// Set current year in footer
+document.addEventListener('DOMContentLoaded', function() {
+    var yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
     }
 });
